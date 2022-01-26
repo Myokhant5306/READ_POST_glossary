@@ -1,0 +1,58 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>e-learning Glossary</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="card-header">
+          <h1>Глоссарий</h1>
+        </div>
+
+        <ul class="glossaries">
+          <% for(var i = 0; i < glossary.length; i++) {%>
+          <li class="glossary">
+            <span><%= glossary[i].term %></span>:
+            <span><%= glossary[i].meaning %></span>
+          </li>
+          <% } %>
+        </ul>
+
+        <h3>Add new terms</h3>
+
+        <form action="/glossary" class="input-group mb-3" method="POST">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="term"
+            name="term"
+          />
+          <input
+            type="text"
+            class="form-control"
+            placeholder="meaning"
+            name="meaning"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <div class="text-center">
+          <img src="mindmap.png" class="img-fluid" alt="mindmap" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
