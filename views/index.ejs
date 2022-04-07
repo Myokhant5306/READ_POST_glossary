@@ -26,28 +26,17 @@
           </li>
           <% } %>
         </ul>
-
+        <br />
+        <hr />
         <h3>Add new terms</h3>
 
-        <form action="/glossary" class="input-group mb-3" method="POST">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="term"
-            name="term"
-          />
-          <input
-            type="text"
-            class="form-control"
-            placeholder="meaning"
-            name="meaning"
-          />
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">
-              Submit
-            </button>
-          </div>
+        <form action="/glossary" method="POST">
+          <input type="text" placeholder="term" name="term" />
+          <input type="text" placeholder="meaning" name="meaning" />
+          <button type="submit">Submit</button>
         </form>
+        <br />
+        <hr />
 
         <div class="text-center">
           <img src="mindmap.png" class="img-fluid" alt="mindmap" />

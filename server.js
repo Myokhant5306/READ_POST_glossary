@@ -22,7 +22,7 @@ MongoClient.connect(
     app.use(bodyParser.urlencoded({ extended: true }));
 
     app.get("/", (req, res) => {
-      db.collection("glossary")
+      glossaries
         .find()
         .toArray()
         .then((results) => {
