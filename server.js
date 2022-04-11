@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 
@@ -41,6 +42,4 @@ MongoClient.connect(
   })
   .catch((error) => console.error(error));
 
-app.listen(3000, function () {
-  console.log("listening on 3000");
-});
+app.listen(port, () => console.log("Listening on port 3000"));
